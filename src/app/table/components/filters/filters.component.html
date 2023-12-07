@@ -1,0 +1,38 @@
+<section class="filter">
+  <div class="inputs">
+    <label>
+      <strong>brandName:</strong>
+      <select [(ngModel)]="filters.brandName">
+        <option *ngFor="let option of brandNameOptions">{{ option }}</option>
+      </select>
+    </label>
+
+    <label>
+      <strong>wbRating:</strong> от
+      <input type="number" min="0" max="5" step="1" [(ngModel)]="filters.wbRating">
+      и больше
+    </label>
+
+    <label>
+      <strong>reviewsCount:</strong> от
+      <select [(ngModel)]="filters.reviewsCount">
+        <option *ngFor="let option of reviewsCountOptions">{{ option }}</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="actions">
+    <button (click)="onApply()">Apply</button>
+    <button (click)="onClear()">Clear</button>
+  </div>
+
+  <div class="exercise">
+    Создать ангуляр модуль, далее нужно получить данные с гипотетического бэкенда (json с
+    <a href="https://drive.google.com/file/d/1NOwjlo8-Y4sPzzMH-nDClhYK3fN4UTIt/view?usp=sharing" target="_blank">данными</a> ),
+    куда нибудь их сложить, создать компонент, отрендерить данные в таблицу, сделать фронтовые сортировки и пагинацию
+    (например по 5 на странице). Плюсом будет сделать фильтрации по нескольким полям. Поля можно использовать любые,
+    это не важно.
+    <br><br>
+    Прошу простить за стили, макетов не прилагалось
+  </div>
+</section>

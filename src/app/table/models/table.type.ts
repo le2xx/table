@@ -30,3 +30,15 @@ export enum SortOrderEnum {
   Ascending = 'ascending',
   Descending = 'descending'
 }
+
+export enum FilterItem {
+  BrandName = 'brandName',
+  WbRating = 'wbRating',
+  ReviewsCount = 'reviewsCount'
+}
+
+export interface TableFilters {
+  [FilterItem.BrandName]?: string;
+  [FilterItem.WbRating]?: number;
+  [FilterItem.ReviewsCount]?: number;
+}

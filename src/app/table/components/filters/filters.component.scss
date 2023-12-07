@@ -1,0 +1,51 @@
+:host {
+  width: 100%;
+}
+
+.filter {
+  display: flex;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  .inputs {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    input[type=number] {
+      width: 100px;
+    }
+
+    select {
+      width: 100px;
+    }
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+
+    button {
+      margin: 10px;
+    }
+  }
+
+  .exercise {
+    flex: 1 1 0;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+  }
+}
