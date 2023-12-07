@@ -1,0 +1,5 @@
+<button (click)="prev()">< Prev</button>
+&nbsp;
+<span>{{ currentPage$ | async }} of {{ pagesCount$ | async }}</span>
+&nbsp;
+<button (click)="next()">Next ></button>

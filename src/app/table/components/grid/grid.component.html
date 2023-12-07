@@ -1,0 +1,36 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>image</th>
+            <th>nomenclature</th>
+            <th>sku</th>
+            <th>name</th>
+            <th>brandName</th>
+            <th>wbRating</th>
+            <th>reviewsCount</th>
+            <th>ordered</th>
+            <th>soldQuantity</th>
+            <th>soldAmount</th>
+            <th>orderedAmount</th>
+            <th>availability</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of table">
+            <td>
+                <img [src]="item.image" [alt]="item.name">
+            </td>
+            <td>{{ item.nomenclature }}</td>
+            <td>{{ item.sku }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.brandName }}</td>
+            <td>{{ item.wbRating }}</td>
+            <td>{{ item.reviewsCount }}</td>
+            <td>{{ item.ordered }}</td>
+            <td>{{ item.soldQuantity }}</td>
+            <td>{{ item.soldAmount }}</td>
+            <td>{{ item.orderedAmount }}</td>
+            <td>{{ item.availability }}</td>
+        </tr>
+    </tbody>
+</table>
