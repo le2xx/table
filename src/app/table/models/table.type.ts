@@ -15,3 +15,18 @@ export interface TableItem {
   "orderedAmount": number;
   "availability": number;
 }
+
+export enum ColumnSortEnum {
+  Nomenclature = 'nomenclature',
+  Sku = 'sku',
+  Name = 'name',
+  BrandName = 'brandName',
+  WbRating = 'wbRating',
+  ReviewsCount = 'reviewsCount',
+  Ordered = 'ordered'
+}
+
+export enum SortOrderEnum {
+  Ascending = 'ascending',
+  Descending = 'descending'
+}

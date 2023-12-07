@@ -2,13 +2,48 @@
     <thead>
         <tr>
             <th>image</th>
-            <th>nomenclature</th>
-            <th>sku</th>
-            <th>name</th>
-            <th>brandName</th>
-            <th>wbRating</th>
-            <th>reviewsCount</th>
-            <th>ordered</th>
+            <th (click)="onSort(columnSortEnum.Nomenclature)">
+              nomenclature
+              <ng-container
+                *ngTemplateOutlet="sortIndicator; context: { columnSortCurrent: columnSortEnum.Nomenclature }"
+              ></ng-container>
+            </th>
+            <th (click)="onSort(columnSortEnum.Sku)">
+              sku
+              <ng-container
+                *ngTemplateOutlet="sortIndicator; context: { columnSortCurrent: columnSortEnum.Sku }"
+              ></ng-container>
+            </th>
+            <th (click)="onSort(columnSortEnum.Name)">
+              name
+              <ng-container
+                *ngTemplateOutlet="sortIndicator; context: { columnSortCurrent: columnSortEnum.Name }"
+              ></ng-container>
+            </th>
+            <th (click)="onSort(columnSortEnum.BrandName)">
+              brandName
+              <ng-container
+                *ngTemplateOutlet="sortIndicator; context: { columnSortCurrent: columnSortEnum.BrandName }"
+              ></ng-container>
+            </th>
+            <th (click)="onSort(columnSortEnum.WbRating)">
+              wbRating
+              <ng-container
+                *ngTemplateOutlet="sortIndicator; context: { columnSortCurrent: columnSortEnum.WbRating }"
+              ></ng-container>
+            </th>
+            <th (click)="onSort(columnSortEnum.ReviewsCount)">
+              reviewsCount
+              <ng-container
+                *ngTemplateOutlet="sortIndicator; context: { columnSortCurrent: columnSortEnum.ReviewsCount }"
+              ></ng-container>
+            </th>
+            <th (click)="onSort(columnSortEnum.Ordered)">
+              ordered
+              <ng-container
+                *ngTemplateOutlet="sortIndicator; context: { columnSortCurrent: columnSortEnum.Ordered }"
+              ></ng-container>
+            </th>
             <th>soldQuantity</th>
             <th>soldAmount</th>
             <th>orderedAmount</th>
@@ -16,7 +51,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let item of table">
+        <tr *ngFor="let item of sortTable(table)">
             <td>
                 <img [src]="item.image" [alt]="item.name">
             </td>
@@ -34,3 +69,10 @@
         </tr>
     </tbody>
 </table>
+
+<ng-template #sortIndicator let-columnSortCurrent="columnSortCurrent">
+  <ng-container *ngIf="columnSortCurrent === columnSort">
+    <span *ngIf="sortOrder === sortOrderEnum.Ascending">&#8593;</span>
+    <span *ngIf="sortOrder === sortOrderEnum.Descending">&#8595;</span>
+  </ng-container>
+</ng-template>
